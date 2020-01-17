@@ -1,0 +1,25 @@
+<h3>Search Result</h3>  
+
+<table style="width:100%">
+  <tr>
+    <th>Destination</th>
+    <th>Owner Name</th>
+    <th>Mobile Number</th>
+    <th>Url</th>
+    <th>number of Rooms</th>
+    <th>Number of beds</th>
+    <th>Accomodates</th>
+  </tr>
+  	<% @results.each do |result| %>  
+       <tr style="text-align: center;">
+       	<td><%=result.destination%></td>
+       		<td><%=result.owner_name%></td>
+       		<td><%=result.mobile_number%></td>
+       		<td><%=result.url%></td>
+       		<td><%=result.number_of_rooms%></td>
+       		<td><%=result.number_of_beds%></td>
+       		<td><%=result.accomodates%></td>
+       	</tr>  
+    <% end %>
+</table>
+

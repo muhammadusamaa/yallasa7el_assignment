@@ -1,0 +1,9 @@
+<h3>Hello</h3>
+
+<%= form_for Property.new, :html => { :method => 'GET' }, :url => :properties_search do |f| %>
+  <%= f.label :destination %>
+  <%= f.text_field :destination %>
+  <%= f.submit 'Search' %>
+<% end %>
+
+
