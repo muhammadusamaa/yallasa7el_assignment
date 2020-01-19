@@ -1,9 +1,26 @@
 <h3 class="login_id">Yalla & Locate your vacation's destination: </h3> 
 <div class="nav">
-	<%= form_for Property.new, :html => { :method => 'GET' }, :url => :properties_search do |f| %>
-  		<div class="search_list"><%= f.text_field :destination, placeholder: 'Destination' %></div>
+	<%= form_for Property.new, :html => { :method => 'GET', id: 'search_property' }, :url => :properties_search, remote: true do |f| %>
+  		<div class="search_list"><%= f.text_field :destination, placeholder: 'Destination' %></div><br>
   		<div class="search_list"><%= f.number_field :number_of_rooms, placeholder: 'Number of Rooms' %></div>
-  		<%= f.submit 'Search' %>
+  		<%= f.submit 'Search', id: 'search_button', onClick: 'javascript:submitForm();' %>
 	<% end %>
 </div>
 
+
+
+
+<div id="display_result"></div>
+
+<script type="text/javascript">
+	function submitForm(){
+	jQuery.ajax({
+        type: 'GET',
+        // data:jQuery('').serialize(),
+        error: function(){  },
+        success: function(data){ },
+        complete: function (){   }
+        });
+    return false;
+ }
+</script>

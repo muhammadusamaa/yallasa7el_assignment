@@ -17,6 +17,10 @@ class PropertiesController < ApplicationController
     else
       Property.search(destination, where: {number_of_rooms: number_of_rooms}, fields: [:destination], match: :word_middle)
     end
+
+    respond_to do |format|               
+      format.js
+    end        
   end
 
   private
