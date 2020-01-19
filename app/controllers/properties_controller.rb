@@ -10,10 +10,10 @@ class PropertiesController < ApplicationController
     if destination.blank? && number_of_rooms.blank?
       redirect_to(root_path, alert: "Empty field!") and return
     end
-    @results = if destination.blank?
+    @results = if destination.blank?  
       Property.search(number_of_rooms, where: {number_of_rooms: number_of_rooms})
     elsif number_of_rooms.blank?
-      Property.search(destination, fields: [:destination], match: :word_middle)
+      Property.search(destination, fields: [:destination], match: :word_middle) 
     else
       Property.search(destination, where: {number_of_rooms: number_of_rooms}, fields: [:destination], match: :word_middle)
     end
