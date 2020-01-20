@@ -14,7 +14,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+# Authentication
 gem 'devise'
+gem 'omniauth-oauth2', '~> 1.6.0'
+gem 'omniauth-google-oauth2', '~>  0.8.0'
+
+# Search Engine
 gem 'searchkick'
 gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails'
 gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails'
@@ -36,6 +41,9 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# Cookies
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
