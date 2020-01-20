@@ -1,13 +1,11 @@
-<h3 class="login_id">Yalla & Locate your vacation's destination: </h3> 
-<div class="nav">
+<h2 class="web_font">"Yalla & Locate your vacation" </h2> 
+<div class="row">
 	<%= form_for Property.new, :html => { :method => 'GET', id: 'search_property' }, :url => :properties_search, remote: true do |f| %>
-  		<div class="search_list"><%= f.text_field :destination, placeholder: 'Destination' %></div><br>
-  		<div class="search_list"><%= f.number_field :number_of_rooms, placeholder: 'Number of Rooms' %></div>
-  		<%= f.submit 'Search', id: 'search_button', onClick: 'javascript:submitForm();' %>
+  	  <div class="col-md-5"><%= f.text_field :destination, placeholder: 'Destination' %></div> 
+  	  <div class="col-md-5"><%= f.number_field :number_of_rooms, placeholder: 'Number of Rooms' %></div>
+  		<div class="col-md-2" style="text-align: center;"><%= f.submit 'Search', id: 'search_button', onClick: 'javascript:submitForm();' %></div>
 	<% end %>
 </div>
-
-
 
 
 <div id="display_result"></div>

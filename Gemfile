@@ -22,6 +22,7 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
 gem 'sunspot_rails'
 gem 'font-awesome-sass', '~> 5.12.0'
+gem 'google-webfonts', require: 'google/webfonts/rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

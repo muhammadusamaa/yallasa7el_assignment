@@ -1,0 +1,27 @@
+<h3 class="web_font">"Search Result"</h3>  
+<% if @results.blank? %>
+ 	<h3 class="web_font">No matching results.</h3>
+<%else %>
+	<table class="table table-hover" style="width:100%">
+  		<tr>
+    		<th>Destination</th>
+    		<th>Owner Name</th>
+    		<th>Mobile Number</th>
+    		<th>Url</th>
+    		<th>number of Rooms</th>
+    		<th>Number of beds</th>
+    		<th>Accomodates</th>
+  		</tr>
+  		<% @results.each do |result| %>  
+       		<tr>
+       			<td><%=result.destination%></td>
+       			<td><%=result.owner_name%></td>
+       			<td><%=result.mobile_number%></td>
+       			<td><a href="https://yallasa7el.com/en/properties/<%= result.url %>" target="_blank" ><%= result.url %></a></td>
+       			<td><%=result.number_of_rooms%></td>
+       			<td><%=result.number_of_beds%></td>
+       			<td><%=result.accomodates%></td>
+       		</tr>  
+    	<% end %>
+	</table>
+<% end %>

@@ -6,40 +6,23 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Allan">
   </head>
 
   <body>
 	<p>
-    <h1 class="website_name">Yalla Sa7el</h1>
-    <i class="fas fa-swimmer icon"></i>
+    <h1 class="web_font">Yalla Sa7el</h1>
     <div class="log_cases">
 		  <% if user_signed_in? %>
   			<strong class="web_font">Welcom: <%= current_user.email %></strong>.
   			
   			<button><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></button> 
 		  <% else %>
-  			<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
- 	 		<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  			<button><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></button>
+	 		  <button><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></button>
 		  <% end %>
     </div>
 	</p>
   <%= yield %>
-  <footer class="footer">
-     <nav>
-        <ul>
-          <li>ABOUT US</li>
-          <li>SUPPORT</li>
-          <li>PRESS</li>
-          <li>API</li>
-          <li>PRIVACY</li>
-          <li>TERMS</li>
-          <li>DIRECTORY</li>
-          <li>PROFILES</li>
-          <li>HASHTAGS</li>
-          <li>LANGUAGE</li>
-        </ul>
-        <p> © 2020 Yalla Sa7el </p>
-      </nav>
-    </footer>
   </body>
 </html>
