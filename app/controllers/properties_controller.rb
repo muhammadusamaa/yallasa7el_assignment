@@ -1,5 +1,7 @@
 class PropertiesController < ApplicationController
   before_action  :init_search, only: [:search]
+  before_action :authenticate_user!
+
   def index
     
   end
