@@ -32,6 +32,7 @@
     <div class="actions">
       <br><%= f.submit "Sign up" %>
     </div>
+    <button class="loginBtn loginBtn--google"><%= link_to 'Sign With Google', user_google_oauth2_omniauth_authorize_path %></button>
   </div>
 <% end %>
 

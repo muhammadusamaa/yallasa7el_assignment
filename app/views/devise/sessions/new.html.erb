@@ -9,7 +9,6 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
  <div class="signup_form">
     <div class="field">
-      <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
 
@@ -28,8 +27,9 @@
     <div class="actions">
       <%= f.submit "Log in" %>
     </div>
+    <button class="loginBtn loginBtn--google"><%= link_to 'Login With Google', user_google_oauth2_omniauth_authorize_path %></button>
   </div> 
 <% end %>
 
-<%= link_to 'Google', user_google_oauth2_omniauth_authorize_path %>
+
 
